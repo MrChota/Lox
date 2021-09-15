@@ -23,7 +23,7 @@ jobs:
       with:
         tag_name: v1.3.0
         asset_path: app/build/outputs/apk/debug/app-debug.apk
-        asset_name: tunnelx-1.0.apk
+        asset_name: loxmusicplayer.apk
         asset_content_type: application/zip
     - name: send default message
       uses: appleboy/telegram-action@master
