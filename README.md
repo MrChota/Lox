@@ -4,37 +4,18 @@
 # Lox Music Player 🎵
 >>>>>>> github/dev
 
-[![Generic badge](https://img.shields.io/badge/Platform-Android-green.svg)](https://github.com/RetroMusicPlayer/RetroMusicPlayer)
-[![Generic badge](https://img.shields.io/badge/minSdkVersion-21-green.svg)](https://github.com/RetroMusicPlayer/RetroMusicPlayer)
+[![Generic badge](https://img.shields.io/badge/Platform-Android-green.svg)](https://github.com/MrChota/Lox)
+[![Generic badge](https://img.shields.io/badge/minSdkVersion-21-green.svg)](https://github.com/MrChota/Lox)
 [![Generic badge](https://img.shields.io/badge/Download-Google_Play-green.svg)](https://play.google.com/store/apps/details?id=com.caren.music&hl=en_IN)
-[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/RetroMusicPlayer/RetroMusicPlayer/blob/master/LICENSE.md)
-[![Twitter Follow](https://img.shields.io/twitter/follow/retromusicapp?style=social)](https://twitter.com/retromusicapp)
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/MrChota/Lox/blob/master/LICENSE.md)
+[![Twitter Follow](https://img.shields.io/twitter/follow/retromusicapp?style=social)](https://twitter.com/mrbhaee)
 [![Crowdin](https://badges.crowdin.net/retromusicplayer/localized.svg)](https://crowdin.com/project/retromusicplayer)
 
 ## 🆕 Material Design music player for Android music lovers 
 
-## ⚠ Join [@retromusiclog](https://t.me/retromusiclog) on Telegram for important updates.
+## ⚠ Join [@loxlog](https://t.me/bhaeinc) on Telegram for important updates.
 
 ## Screenshots
-### App Themes
-| <img src="screenshots/home.jpeg" width="200"/> | <img src="screenshots/home_dark.jpeg" width="200"/> | <img src="screenshots/home_black.jpeg" width="200"/> |
-|:---:|:---:|:---:|
-|Clearly white| Kinda dark | Just black|
-
-### Player screen
-| <img src="screenshots/home.jpeg" width="200"/>| <img src="screenshots/list.jpeg" width="200"/>| <img src="screenshots/albums.jpeg" width="200"/>| <img src="screenshots/settings.jpeg" width="200"/>|
-|:---:|:---:|:---:|:---:|
-| Home | Songs | Albums | Settings |
-
-### 9+ Now playing themes
- 
-| <img src="screenshots/np_normal.jpeg" width="200"/>	|<img src="screenshots/np_fit.jpeg" width="200"/>|   <img src="screenshots/np_flat.jpeg" width="200"/>  	|    <img src="screenshots/np_color.jpeg" width="200"/> 	|     <img src="screenshots/np_material.jpeg" width="200"/>	|
-|:-----:	|:-----:	|:-----:	|:-----:	|:-----:	|
-| Normal 	| Fit 	| Flat 	| Color 	| Material 	|
-
-| <img src="screenshots/no_classic.jpeg" width="200"/>	|<img src="screenshots/np_adaptive.jpeg" width="200"/>|   <img src="screenshots/np_blur.jpeg" width="200"/>  	|    <img src="screenshots/np_tiny.jpeg" width="200"/> 	|     <img src="screenshots/np_peak.jpeg" width="200"/>	|
-|:-----:	|:-----:	|:-----:	|:-----:	|:-----:	|
-| Classic 	| Adaptive 	| Blur 	| Tiny 	| Peak 	|
 
 ### 🧭 Navigation never made easier 
 Self-explanatory interface without overloaded menus.
@@ -80,20 +61,19 @@ We are trying our best to bring you the best user experience. The app is regular
 ### ❓ FAQ
 Please read the FAQ [here](https://retromusic.app/faq.html)
 
-In any case, you find or notice any bugs please report them by creating an issue or by contacting us in the [Telegram group](https://t.me/retromusicapp).
-If you have any feature suggestions, please create an issue with detailed information or by contacting us in the [Telegram group](https://t.me/retro_music_suggestion).
+In any case, you find or notice any bugs please report them by creating an issue or by contacting us in the [Telegram group](https://t.me/bhaeinc).
+If you have any feature suggestions, please create an issue with detailed information or by contacting us in the [Telegram group](https://t.me/lox_suggestion).
 
 ### 🔗 Social links
-**Telegram:** https://t.me/retromusicapp <br>
-**Instagram:** https://instagram.com/retromusicapp <br>
+**Telegram:** https://t.me/bhaeinc <br>
+**Instagram:** https://instagram.com/mrbhai <br>
 **Crowdin**: https://crowdin.com/project/retromusicplayer <br>
-**Pinterest:** https://pinterest.com/retromusicapp <br>
-**Twitter:** https://twitter.com/retromusicapp <br>
+**Twitter:** https://twitter.com/mrbhaee <br>
 
 ### 🗂️ License
 
 lox Player is released under the GNU General Public License v3.0
-(GPLv3), which can be found [here](LICENSE.md)
+(GPLv3), which can be found from the opensource code of retromusic player [here](LICENSE.md)
 
 
 >Please note: lox Player is an offline music player app. It

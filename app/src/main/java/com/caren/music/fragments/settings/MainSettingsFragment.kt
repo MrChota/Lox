@@ -75,7 +75,7 @@ class MainSettingsFragment : Fragment(), View.OnClickListener {
         binding.otherSettings.setOnClickListener(this)
         binding.aboutSettings.setOnClickListener(this)
 
-        adView = AdView(context, "IMG_16_9_APP_INSTALL#532107741396486_546989073241686", AdSize.BANNER_HEIGHT_50)
+        adView = AdView(context, "532107741396486_546989073241686", AdSize.BANNER_HEIGHT_50)
         // Find the Ad Container
         val adContainer = view.findViewById<LinearLayout>(R.id.banner_container)
         // Add the ad view to your activity layout
