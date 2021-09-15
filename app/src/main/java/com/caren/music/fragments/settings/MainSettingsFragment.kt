@@ -19,6 +19,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import code.name.monkey.appthemehelper.ThemeStore
@@ -28,6 +30,7 @@ import com.caren.music.databinding.FragmentMainSettingsBinding
 import com.caren.music.extensions.hide
 import com.caren.music.extensions.show
 import com.caren.music.util.NavigationUtil
+import com.facebook.ads.*
 
 class MainSettingsFragment : Fragment(), View.OnClickListener {
 
@@ -35,6 +38,7 @@ class MainSettingsFragment : Fragment(), View.OnClickListener {
     private val binding get() = _binding!!
 
 
+    lateinit var adView: AdView
     override fun onClick(view: View) {
         when (view.id) {
             R.id.generalSettings -> findNavController().navigate(R.id.action_mainSettingsFragment_to_themeSettingsFragment)
@@ -54,6 +58,8 @@ class MainSettingsFragment : Fragment(), View.OnClickListener {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentMainSettingsBinding.inflate(inflater, container, false)
+
+
         return binding.root
     }
 
@@ -69,6 +75,13 @@ class MainSettingsFragment : Fragment(), View.OnClickListener {
         binding.otherSettings.setOnClickListener(this)
         binding.aboutSettings.setOnClickListener(this)
 
+        adView = AdView(context, "IMG_16_9_APP_INSTALL#532107741396486_546989073241686", AdSize.BANNER_HEIGHT_50)
+        // Find the Ad Container
+        val adContainer = view.findViewById<LinearLayout>(R.id.banner_container)
+        // Add the ad view to your activity layout
+        adContainer.addView(adView)
+        // Request an ad
+        adView.loadAd()
         binding.buyProContainer.apply {
             if (App.isProVersion()) hide() else show()
             setOnClickListener {
@@ -82,9 +95,44 @@ class MainSettingsFragment : Fragment(), View.OnClickListener {
             binding.buyPremium.setTextColor(it)
             binding.diamondIcon.imageTintList = ColorStateList.valueOf(it)
         }
+        adslistenerCallbacks()
     }
 
+
+    private fun adslistenerCallbacks() {
+        val adListener: AdListener = object : AdListener {
+            override fun onError(ad: Ad, adError: AdError) {
+                // Ad error callback
+                Toast.makeText(
+                    context,
+                    "Error: " + adError.errorMessage,
+                    Toast.LENGTH_LONG
+                )
+                    .show()
+            }
+
+            override fun onAdLoaded(ad: Ad) {
+                // Ad loaded callback
+            }
+
+            override fun onAdClicked(ad: Ad) {
+                // Ad clicked callback
+            }
+
+            override fun onLoggingImpression(ad: Ad) {
+                // Ad impression logged callback
+            }
+        }
+        // Request an ad
+        adView.loadAd(adView.buildLoadAdConfig().withAdListener(adListener).build())
+
+    }
+
+
     override fun onDestroyView() {
+        if (adView != null) {
+            adView.destroy()
+        }
         super.onDestroyView()
         _binding = null
     }

@@ -20,10 +20,13 @@ import android.content.SharedPreferences.OnSharedPreferenceChangeListener
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.ui.setupWithNavController
 import com.caren.music.*
+import com.caren.music.R
 import com.caren.music.activities.base.AbsCastActivity
+import com.caren.music.activities.base.AbsSlidingMusicPanelActivity
 import com.caren.music.databinding.SlidingMusicPanelLayoutBinding
 import com.caren.music.extensions.extra
 import com.caren.music.extensions.findNavController
@@ -37,9 +40,11 @@ import com.caren.music.repository.PlaylistSongsLoader
 import com.caren.music.service.MusicService
 import com.caren.music.util.AppRater
 import com.caren.music.util.PreferenceUtil
+import com.facebook.ads.*
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.get
+
 
 class MainActivity : AbsCastActivity(), OnSharedPreferenceChangeListener {
     companion object {
@@ -50,6 +55,8 @@ class MainActivity : AbsCastActivity(), OnSharedPreferenceChangeListener {
     override fun createContentView(): SlidingMusicPanelLayoutBinding {
         return wrapSlidingMusicPanel()
     }
+
+    private var interstitialAd: InterstitialAd? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setDrawUnderStatusBar()
@@ -66,6 +73,60 @@ class MainActivity : AbsCastActivity(), OnSharedPreferenceChangeListener {
         if (!hasPermissions()) {
             findNavController(R.id.fragment_container).navigate(R.id.permissionFragment)
         }
+
+        AudienceNetworkAds.initialize(this@MainActivity)
+
+        interstitialAd = InterstitialAd(
+            this,
+            "532107741396486_532109971396263"
+        )
+        // Create listeners for the Interstitial Ad
+        val interstitialAdListener: InterstitialAdListener = object : InterstitialAdListener {
+            override fun onInterstitialDisplayed(ad: Ad) {
+                // Interstitial ad displayed callback
+                Log.e(AbsSlidingMusicPanelActivity.TAG, "Interstitial ad displayed.")
+            }
+
+            override fun onInterstitialDismissed(ad: Ad) {
+                // Interstitial dismissed callback
+                Log.e(AbsSlidingMusicPanelActivity.TAG, "Interstitial ad dismissed.")
+            }
+
+            override fun onError(ad: Ad, adError: AdError) {
+                // Ad error callback
+                Log.e(
+                    AbsSlidingMusicPanelActivity.TAG,
+                    "Interstitial ad failed to load: " + adError.errorMessage
+                )
+            }
+
+            override fun onAdLoaded(ad: Ad) {
+                // Interstitial ad is loaded and ready to be displayed
+                Log.d(
+                    AbsSlidingMusicPanelActivity.TAG,
+                    "Interstitial ad is loaded and ready to be displayed!"
+                )
+                // Show the ad
+                interstitialAd!!.show()
+            }
+
+            override fun onAdClicked(ad: Ad) {
+                // Ad clicked callback
+                Log.d(AbsSlidingMusicPanelActivity.TAG, "Interstitial ad clicked!")
+            }
+
+            override fun onLoggingImpression(ad: Ad) {
+                // Ad impression logged callback
+                Log.d(AbsSlidingMusicPanelActivity.TAG, "Interstitial ad impression logged!")
+            }
+        }
+
+        // For auto play video ads, it's recommended to load the ad
+        // at least 30 seconds before it is shown
+        interstitialAd?.loadAd(
+            interstitialAd!!.buildLoadAdConfig()
+                .withAdListener(interstitialAdListener)
+                .build())
     }
 
     private fun setupNavigationController() {
@@ -137,6 +198,9 @@ class MainActivity : AbsCastActivity(), OnSharedPreferenceChangeListener {
     }
 
     override fun onDestroy() {
+        if (interstitialAd != null) {
+            interstitialAd!!.destroy();
+        }
         super.onDestroy()
         PreferenceUtil.unregisterOnSharedPreferenceChangedListener(this)
     }
