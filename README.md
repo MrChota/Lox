@@ -49,7 +49,7 @@ favorite songs. No other music player has this feature.
 -  Create, edit and import playlists
 -  Playing queue with reorder
 -  User profile
--  30+ languages support (help translate the project: [Crowdin](https://crowdin.com/project/retromusicplayer)
+-  30+ languages support (help translate the project: [Crowdin](https://crowdin.com/project/lox)
 -  Browse and play your music by songs, albums, artists, playlists and
   genre
 -  Smart Auto Playlists - Recently played, most played and history
@@ -59,7 +59,7 @@ favorite songs. No other music player has this feature.
 We are trying our best to bring you the best user experience. The app is regularly being updated for bug fixes and new features.
 
 ### ❓ FAQ
-Please read the FAQ [here](https://retromusic.app/faq.html)
+Please read the FAQ [here](https://lox.app/faq.html)
 
 In any case, you find or notice any bugs please report them by creating an issue or by contacting us in the [Telegram group](https://t.me/bhaeinc).
 If you have any feature suggestions, please create an issue with detailed information or by contacting us in the [Telegram group](https://t.me/lox_suggestion).
@@ -67,13 +67,13 @@ If you have any feature suggestions, please create an issue with detailed inform
 ### 🔗 Social links
 **Telegram:** https://t.me/bhaeinc <br>
 **Instagram:** https://instagram.com/mrbhai <br>
-**Crowdin**: https://crowdin.com/project/retromusicplayer <br>
+**Crowdin**: https://crowdin.com/project/lox <br>
 **Twitter:** https://twitter.com/mrbhaee <br>
 
 ### 🗂️ License
 
 lox Player is released under the GNU General Public License v3.0
-(GPLv3), which can be found from the opensource code of retromusic player [here](LICENSE.md)
+(GPLv3) [here](LICENSE.md)
 
 
 >Please note: lox Player is an offline music player app. It
