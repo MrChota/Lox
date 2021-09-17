@@ -19,8 +19,7 @@ android {
         versionCode 10528
         versionName '5.0.0' + "_" + getDate()
 
-        buildConfigField 'String', 'GOOGLE_PLAY_LICENSING_KEY' , "\"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArdXJA/SVdEm7jswjBAEB6um7z0fjez3u/20ExK4Mz/yKUmwgXAt5ocP9H5CPNOTi6Wa+1eaJN9yON3/F69EQWyXj0LiWlymXWvEyeLsNLyWmb6HvWaLKVHxBv6kSmkyIW4FgUr/6U3jEK9YoMbzZ6SUlrwe8amz9Te8e/tHhb9cnWdrmRaExyD9pHGB+tchEEb4+Nehpv5mIdzpS0Lu0MvDbAugN6JhNWh025BLwdwNUaLRvEZAZBGFzRq5httNpznl56dHJH/dd68i5A7dTQ0Jj2D7UeoNwWwnwZDludCwp2GBwmOBzs5pFz9RbiqfuVaG6BaWVSowbriFtRVKOYQIDAQAB\""
-       // buildConfigField("String", "GOOGLE_PLAY_LICENSING_KEY", "\"${getProperty(getProperties('../public.properties'), 'GOOGLE_PLAY_LICENSE_KEY')}\"")
+       buildConfigField("String", "GOOGLE_PLAY_LICENSING_KEY", "\"${getProperty(getProperties('../public.properties'), 'GOOGLE_PLAY_LICENSE_KEY')}\"")
     }
     signingConfigs {
         release {
