@@ -8,8 +8,8 @@
 [![Generic badge](https://img.shields.io/badge/minSdkVersion-21-green.svg)](https://github.com/MrChota/Lox)
 [![Generic badge](https://img.shields.io/badge/Download-Google_Play-green.svg)](https://play.google.com/store/apps/details?id=com.caren.music&hl=en_IN)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://github.com/MrChota/Lox/blob/master/LICENSE.md)
-[![Twitter Follow](https://img.shields.io/twitter/follow/retromusicapp?style=social)](https://twitter.com/mrbhaee)
-[![Crowdin](https://badges.crowdin.net/retromusicplayer/localized.svg)](https://crowdin.com/project/retromusicplayer)
+[![Twitter Follow](https://img.shields.io/twitter/follow/mrbhaee?style=social)](https://twitter.com/mrbhaee)
+[![Crowdin](https://badges.crowdin.net/lox/localized.svg)](https://crowdin.com/project/lox)
 
 ## 🆕 Material Design music player for Android music lovers 
 
